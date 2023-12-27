@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { IoEarthOutline, IoEarth } from "react-icons/io5";
 
 
@@ -29,8 +29,8 @@ function Nav() {
         <NavLink rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
           {
             earth ?
-            <IoEarthOutline className='text-[2.5rem] dark:text-violet-400' /> :
-            <IoEarth className='text-[2.5rem] dark:text-violet-400' />
+            <Link to='/'><IoEarthOutline to='/' className='text-[2.5rem] dark:text-violet-400' /></Link> :
+            <Link to='/'><IoEarth className='text-[2.5rem] dark:text-violet-400' /></Link>
           }
         </NavLink>
         <ul className="items-stretch hidden space-x-3 md:flex">

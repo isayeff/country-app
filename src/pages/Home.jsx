@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { DataCntx } from '../../data/DataContex'
+import { Link } from 'react-router-dom';
 
 function Home() {
     const { data, setData } = useContext(DataCntx)
@@ -19,9 +20,9 @@ function Home() {
                 <div className="cards flex flex-wrap gap-5 justify-center">
                     {data.slice(0, load).map(item => (
                         <article key={item.ccn3} className="w-[292px] countryCards flex flex-col dark:bg-gray-900 shadow-md rounded-sm overflow-hidden">
-                            <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                            <Link to={`/details/${item.cca3}`}>
                                 <img alt="" className="object-cover w-full h-52 dark:bg-gray-500" src={item.flags.svg} />
-                            </a>
+                            </Link>
                             <div className="flex flex-col flex-1 p-6">
                                 <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
                                 <a rel="noopener noreferrer" href="#"
