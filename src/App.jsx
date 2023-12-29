@@ -8,14 +8,13 @@ import CardDet from './pages/CardDet'
 function App() {
   return (
     <>
-      <DataContex>
         <Routes>
           <Route path='/' element={<AnaLayout />}>
               <Route index element={<Home />} />
-              <Route path='/details/:cca3' element={<CardDet />} /> 
+              <Route path='/details/:cca3' element={<CardDet />} />
+              <Route path='countries/:cont' element={<Home />} />
           </Route>
         </Routes>
-      </DataContex>
     </>
   )
 }

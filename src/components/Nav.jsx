@@ -17,31 +17,31 @@ function Nav() {
       <div className="container flex justify-between h-16 mx-auto md:justify-center md:space-x-8 text-[1.1rem]">
         <ul className="items-stretch hidden space-x-3 md:flex">
           <li className="flex">
-            <NavLink className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Europe</NavLink>
+            <NavLink to='/countries/europe' className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Europe</NavLink>
           </li>
           <li className="flex">
-            <NavLink className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Asia</NavLink>
+            <NavLink to='/countries/asia' className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Asia</NavLink>
           </li>
           <li className="flex">
-            <NavLink className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Americas</NavLink>
+            <NavLink to='/countries/americas' className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Americas</NavLink>
           </li>
         </ul>
-        <NavLink rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
+        <NavLink to='/' rel="noopener noreferrer" aria-label="Back to homepage" className="flex items-center p-2">
           {
-            earth ?
-            <Link to='/'><IoEarthOutline to='/' className='text-[2.5rem] dark:text-violet-400' /></Link> :
-            <Link to='/'><IoEarth className='text-[2.5rem] dark:text-violet-400' /></Link>
+            // earth ?
+            <IoEarthOutline to='/' className='text-[2.5rem] dark:text-violet-400' />
+            // : <IoEarth className='text-[2.5rem] dark:text-violet-400' />
           }
         </NavLink>
         <ul className="items-stretch hidden space-x-3 md:flex">
           <li className="flex">
-            <NavLink className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Africa</NavLink>
+            <NavLink to='/countries/africa' className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Africa</NavLink>
           </li>
           <li className="flex">
-            <NavLink className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Oceania</NavLink>
+            <NavLink to='/countries/oceania' className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Oceania</NavLink>
           </li>
           <li className="flex">
-            <NavLink className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Antarctic</NavLink>
+            <NavLink to='/countries/antarctic' className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Antarctic</NavLink>
           </li>
         </ul>
         <button title="Button" type="button" className="p-4 md:hidden">
