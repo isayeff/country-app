@@ -2,7 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .active {
+.active {
     color: #A78BFA;
-    border-bottom: 1px solid #A78BFA !important;
-} */
+    border-bottom: 2px solid #A78BFA !important;
+}
+
+.countryCards:hover h3 {
+    text-decoration: underline;
+}
+
+.panel {
+    overflow: hidden;
+    height: 0;
+    transition: height .5s;
+}
+
+.panelOpen {
+    height: 48vh;
+}
