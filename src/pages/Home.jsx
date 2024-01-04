@@ -20,9 +20,9 @@ function Home() {
             <main className='bg-gray-800  py-10 min-h-[100vh]'>
                 <div className="cards flex flex-wrap gap-5 justify-center">
                     {
-                        cont == undefined ? 
-                        <Card count={load} />
-                        :<ContCards />
+                        cont == undefined ?
+                            <Card count={load} />
+                            : <ContCards />
                     }
                 </div>
                 <div className="loadBtn text-center">
