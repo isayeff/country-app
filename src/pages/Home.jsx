@@ -23,7 +23,7 @@ function Home() {
 
     function scroll() {
         window.scrollTo({
-            top: 480,
+            top: 550,
             behavior: "smooth",
         });
     }
