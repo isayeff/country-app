@@ -12,7 +12,7 @@ function ContCards({val}) {
             {
                 data
                     .filter(item => item.region.toLowerCase() == cont)
-                    .filter(item => item.name.common.toLowerCase().includes(val))
+                    .filter(item => item.name.common.toLowerCase().includes(val.toLowerCase()))
                     .map(item => (
                         <article key={nanoid()} className="w-[292px] countryCards flex flex-col dark:bg-gray-900 shadow-md rounded-sm overflow-hidden">
                             <Link to={`/details/${item.cca3}`}>

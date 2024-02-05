@@ -10,7 +10,7 @@ function Card({ count, val }) {
     return (
         <>
             {data
-            .filter(item => item.name.common.toLowerCase().includes(val))
+            .filter(item => item.name.common.toLowerCase().includes(val.toLowerCase()))
             .slice(0, count)
             .map(item => (
                 <article key={nanoid()} className="w-[292px] countryCards flex flex-col dark:bg-gray-900 shadow-md rounded-sm overflow-hidden">
