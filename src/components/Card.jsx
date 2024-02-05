@@ -3,14 +3,16 @@ import { DataCntx } from '../../data/DataContex';
 import { Link, useParams } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 
-function Card({ count }) {
+function Card({ count, val }) {
     const { data, setData } = useContext(DataCntx)
     const { cont } = useParams()
-    // console.log(cont);
 
     return (
         <>
-            {data.slice(0, count).map(item => (
+            {data
+            .filter(item => item.name.common.toLowerCase().includes(val))
+            .slice(0, count)
+            .map(item => (
                 <article key={nanoid()} className="w-[292px] countryCards flex flex-col dark:bg-gray-900 shadow-md rounded-sm overflow-hidden">
                     <Link to={`/details/${item.cca3}`}>
                         <img alt="" className="object-cover w-full h-52 dark:bg-gray-500" src={item.flags.svg} />

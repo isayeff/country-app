@@ -24,7 +24,7 @@ function CardDet() {
                                 <p className="flex-1 pt-1 md:pt-2">Region: {element.region}</p>
                                 <p className="flex-1 pt-1 md:pt-2">Alternative names: {element.name.official}</p>
                                 <div className="inline-flex items-center pt-2 pb-6 space-x-2 text-sm  text-white">
-                                    <span>{element.borders ? element.borders.map(ad3 =><Link  key={nanoid()} to={`/details/${ad3}`}><button className='border-0 mx-[5px] px-[10px] bg-slate-600 rounded-sm'>{ad3}</button></Link>) : 'no borders'}</span>
+                                    <span>{element.borders ? element.borders.map(ad3 =><Link  key={nanoid()} to={`/details/${ad3}`}><button className='border-0 px-[10px] bg-slate-600 rounded-sm m-[5px]'>{ad3}</button></Link>) : <u>No Borders</u>}</span>
                                 </div>
                                 <div className="flex items-center justify-between pt-2">
                                     <div className="flex space-x-2">

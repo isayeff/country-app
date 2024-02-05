@@ -3,7 +3,7 @@ import { DataCntx } from '../../data/DataContex'
 import { Link, useParams } from 'react-router-dom'
 import { nanoid } from 'nanoid'
 
-function ContCards() {
+function ContCards({val}) {
     const { data, useData } = useContext(DataCntx)
     const { cont } = useParams()
     // console.log(cont);
@@ -12,6 +12,7 @@ function ContCards() {
             {
                 data
                     .filter(item => item.region.toLowerCase() == cont)
+                    .filter(item => item.name.common.toLowerCase().includes(val))
                     .map(item => (
                         <article key={nanoid()} className="w-[292px] countryCards flex flex-col dark:bg-gray-900 shadow-md rounded-sm overflow-hidden">
                             <Link to={`/details/${item.cca3}`}>
