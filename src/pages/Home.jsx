@@ -61,7 +61,7 @@ function Home() {
                     }
                 </div>
                 <div className="loadBtn text-center">
-                    {load < data.length && cont == undefined && <button className='bg-slate-900 text-white py-[10px] px-[20px] rounded-[5px] mt-[20px]' onClick={showMore}>Show More...</button>}
+                    {load < data.length && cont == undefined && state == false && <button className='bg-slate-900 text-white py-[10px] px-[20px] rounded-[5px] mt-[20px]' onClick={showMore}>Show More...</button>}
                 </div>
             </main>
         </>
