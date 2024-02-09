@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
-function Input({getVal, state}) {
+function Input({getVal, state, handleSearch}) {
+    const inpRef = useRef()
+    function handleFocus() {
+        state && inpRef.current.focus()
+    }
+
+    useEffect(()=>{handleSearch()},[state])
+
+    function handleSearch() {
+        inpRef.current.focus()
+    }
     return (
         <>
-            <fieldset className={`w-full space-y-1 dark:text-gray-100 search flex justify-center items-center mb-[30px] ${state ? 'block' : 'hidden'} transition-all ease-in-out duration-400`}>
+            <fieldset className={`w-full space-y-1 dark:text-gray-100 search flex justify-center items-center ${state ? 'block' : 'hidden'} transition-all ease-in-out duration-400`}>
                 <label className="hidden">Search</label>
                 <div className="relative">
                     <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -13,7 +23,7 @@ function Input({getVal, state}) {
                             </svg>
                         </button>
                     </span>
-                    <input onInput={getVal} type="search" name="Search" placeholder="Search..." className="w-32 py-[9px] pl-10 pr-3 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-900 dark:text-gray-100 focus:dark:bg-gray-700 focus:dark:border-violet-400" />
+                    <input ref={inpRef} onInput={getVal} onFocus={handleFocus} type="search" name="Search" placeholder="Search..." className=" min-w-[250px] py-[10px] pl-10 pr-3 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-900 dark:text-gray-100 focus:dark:bg-gray-700 focus:dark:border-violet-400" />
                 </div>
             </fieldset>
             {/* <div className="search flex justify-center items-center mb-[30px]">

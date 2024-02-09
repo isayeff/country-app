@@ -4,6 +4,7 @@ import Card from '../components/Card';
 import { useParams } from 'react-router-dom';
 import ContCards from '../components/ContCards';
 import Input from '../components/Input';
+import RandomCard from '../components/RandomCard';
 
 function Home() {
     const { data, setData } = useContext(DataCntx)
@@ -23,7 +24,7 @@ function Home() {
 
     function scroll() {
         window.scrollTo({
-            top: 550,
+            top: 1000,
             behavior: "smooth",
         });
     }
@@ -38,16 +39,19 @@ function Home() {
             <main className='bg-gray-800  py-10 min-h-[100vh] scroll-smooth'>
                 {
                     cont == undefined ?
-                    <div className="title flex flex-col justify-center items-center gap-[40px] h-[60vh] text-center">
-                        <h2 className="inline text-3xl font-bold tracking-tight text-white sm:block sm:text-5xl">Welcome to CountryApp Website</h2>
-                        <p className="inline text-3xl font-bold tracking-tight text-[#A78BFA] sm:block sm:text-4xl">You can find data of any country in this website.</p>
-                        <div className='flex flex-col md:flex-row gap-[30px]'>
-                            <button onClick={scroll} className='w-[170px] py-[10px] rounded-[5px] border-0 font-bold text-white bg-[#8f6aff] uppercase text-[.9rem] hover:bg-[#6f4cd6]'>have a look</button>
-                            <button onClick={handleSearch} className='w-[170px] py-[10px] rounded-[5px] border-0 font-bold text-white bg-[#000] uppercase text-[.9rem] hover:bg-[#191919]'>search</button>
+                        <div className="title flex flex-col justify-center items-center gap-[40px] h-[50vh] text-center">
+                            <h2 className="inline text-3xl font-bold tracking-tight text-white sm:block sm:text-5xl">Welcome to CountryApp Website</h2>
+                            <p className="inline text-3xl font-bold tracking-tight text-[#A78BFA] sm:block sm:text-4xl">You can find data of any country in this website.</p>
+                            <Input getVal={getVal} handleSearch={handleSearch} state={state} />
+                            <div className='flex flex-col md:flex-row gap-[30px]'>
+                                <button onClick={scroll} className='w-[170px] py-[10px] rounded-[5px] border-0 font-bold text-white bg-[#8f6aff] uppercase text-[.9rem] hover:bg-[#6f4cd6]'>have a look</button>
+                                <button onClick={handleSearch} className='w-[170px] py-[10px] rounded-[5px] border-0 font-bold text-white bg-[#000] uppercase text-[.9rem] hover:bg-[#191919]'>search</button>
+                            </div>
                         </div>
-                        <Input getVal={getVal} state={state} />
-                    </div>
-                    : ''
+                        : ''
+                }
+                {
+                    cont == undefined && state == false && <RandomCard />
                 }
                 <div className="cards flex flex-wrap gap-5 justify-center">
                     {
