@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .active {
-    color: #A78BFA;
-    border-bottom: 2px solid #A78BFA !important;
+    color: #8B5CF6;
+    border-bottom: 2px solid #8B5CF6 !important;
 }
 
 .countryCards:hover h3 {
