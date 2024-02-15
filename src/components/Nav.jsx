@@ -76,7 +76,7 @@ function Nav() {
           </svg>
         </button>
       </div>
-      <div className={`panel md:hidden ${swtch ? 'panelOpen' : ''}`}>
+      <div className={`panel md:hidden ${swtch && 'panelOpen'}`}>
         <ul className="flex flex-col items-center gap-[15px] py-[10px]">
           <hr className='bg-white h-[1px] w-[50vw]' />
           <li><NavLink to='/countries/europe'>Europe</NavLink></li>
