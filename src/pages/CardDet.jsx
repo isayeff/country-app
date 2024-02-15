@@ -13,8 +13,8 @@ function CardDet() {
             {
                 element &&
                 <>
-                    <div className="h-[73vh] dark:bg-gray-800 dark:text-gray-50 shadow-md flex items-center">
-                        <div id="openedCard" className="container w-[65vw] md:w-[80vw] flex justify-between flex-col md:flex-row mx-auto dark:bg-gray-900 overflow-hidden">
+                    <div className="h-[73vh] dark:bg-gray-800 dark:text-gray-50 flex items-center">
+                        <div id="openedCard" className="container w-[65vw] md:w-[80vw] flex justify-between flex-col md:flex-row mx-auto dark:bg-gray-900 overflow-hidden shadow-md">
                             <div className="flex flex-col p-3 md:p-6 order-2 md:order-1">
                                 <div className="flex justify-start">
                                     <span className="px-2 py-1 text-xs rounded-full dark:bg-violet-400 dark:text-gray-900">{element.cca3}</span>

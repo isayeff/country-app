@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { IoEarthOutline, IoEarth } from "react-icons/io5";
+import { LuMoon, LuSun } from "react-icons/lu";
 
 
 function Nav() {
   const [swtch, setSwtch] = useState(false)
   // const [earth, setEarth] = useState(true)
   // const interval = setInterval(() => {
-    // setEarth(!earth)
+  // setEarth(!earth)
   // }, 1000)
   // console.log(earth);
   const navigate = useNavigate()
@@ -16,8 +17,15 @@ function Nav() {
     setSwtch(!swtch)
   }
 
+  const [themeBtn, setThemeBtn] = useState(false)
+
+  function handleTheme() {
+    document.documentElement.classList.toggle("dark")
+    setThemeBtn(!themeBtn)
+  }
+
   return (
-    <header className="p-4 dark:bg-gray-900 dark:text-zinc-300">
+    <header className="p-4 dark:bg-gray-900 dark:text-zinc-300 relative">
       <div className="container flex justify-between h-16 mx-auto md:justify-center md:space-x-8 text-[1.1rem]">
         <ul className="items-stretch hidden space-x-3 md:flex">
           <li className="flex">
@@ -33,7 +41,7 @@ function Nav() {
         <NavLink to='/' rel="noopener noreferrer" aria-label="Back to homepage" className="flex items-center p-2">
           {
             // earth ?
-            <IoEarthOutline to='/' className='text-[2.5rem] dark:text-violet-400' />
+            <IoEarthOutline to='/' className='text-[2.5rem] text-violet-500' />
             // : <IoEarth className='text-[2.5rem] dark:text-violet-400' />
           }
         </NavLink>
@@ -48,6 +56,20 @@ function Nav() {
             <NavLink to='/countries/antarctic' className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Antarctic</NavLink>
           </li>
         </ul>
+        <button onClick={handleTheme} className='hidden md:block absolute right-[3%] top-[37%]'>
+          {
+            themeBtn ?
+              <LuMoon className='text-[25px]' /> :
+              <LuSun className='text-[25px]' />
+          }
+        </button>
+        <button onClick={handleTheme} className='md:hidden'>
+          {
+            themeBtn ?
+              <LuMoon className='text-[25px]' /> :
+              <LuSun className='text-[25px]' />
+          }
+        </button>
         <button onClick={handleBurger} title="Button" type="button" className="p-4 md:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-100">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
