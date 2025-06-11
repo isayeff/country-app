@@ -7,7 +7,7 @@ import Input from '../components/Input';
 import RandomCard from '../components/RandomCard';
 
 function Home() {
-    const { data, setData } = useContext(DataCntx)
+    const data = useContext(DataCntx)
     const [load, setLoad] = useState(20)
     const [val, setVal] = useState('')
     const [state, setState] = useState(false)

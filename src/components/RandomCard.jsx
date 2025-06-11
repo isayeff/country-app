@@ -1,18 +1,19 @@
-import React, { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { DataCntx } from '../../data/DataContex'
 import { Link } from 'react-router-dom';
 
 function RandomCard() {
     const data = useContext(DataCntx)
+    const [randNum, setRandNum] = useState('')
+    
+    useEffect(() => {
+        if (data.data) {
+            setRandNum(Math.floor(Math.random() * data.data.length))
+        }
+    }, [data.data])
 
-    function rand(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    let randNum = rand(0, 249)
-    let obj = data.data[randNum]
+    const obj = data.data[randNum]
 
-    console.log(obj);
-    console.log(obj && obj.name.common);
     return (
         <>
             {

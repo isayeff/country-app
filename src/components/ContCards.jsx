@@ -23,7 +23,7 @@ function ContCards({val}) {
                                 <h3 className="flex-1 py-2 text-lg font-semibold leadi dark:text-white">{item.name.common}, <span className='italic'>{item.capital}</span></h3>
                                 <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
                                     <span>Population: {item.population}</span>
-                                    <span>{item.area} km2</span>
+                                    <span>{item.area} km <sup>2</sup></span>
                                 </div>
                             </div>
                         </article>

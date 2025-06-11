@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const DataCntx = createContext()
 
+
 export default function DataContex({children}) {
 
     const [data, setData] = useState([])
