@@ -9,7 +9,7 @@ export default function DataContex({children}) {
     const dataObj = {data, setData}
 
     useEffect(() => {
-        fetch('https://restcountries.com/v3.1/all')
+        fetch('https://raw.githubusercontent.com/TheOksigen/purfect_data/refs/heads/main/country.json')
         .then(res => res.json())
         .then(item => setData(item))
     },[])

@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid'
 function CardDet() {
     const { data, setData } = useContext(DataCntx)
     const { cca3 } = useParams()
-    const element = data.find(item => item.cca3 == cca3)
+    const element = data.find(item => item.alpha3Code == cca3)
     // console.log(element);
     return (
         <>
